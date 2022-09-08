@@ -1,0 +1,7 @@
+.github/
+.eslintrc
+.gitignore
+README.md
+LICENSE.md
+.git
+.env
