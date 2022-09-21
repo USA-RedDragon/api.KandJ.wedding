@@ -129,7 +129,7 @@ resource "aws_s3_object" "dist" {
 
 data "archive_file" "lambda" {
   type             = "zip"
-  source_dir       = "${path.module}/.."
+  source_dir       = path.module
   output_file_mode = "0666"
   output_path      = "${path.module}/dist.zip"
 
