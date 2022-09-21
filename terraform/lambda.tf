@@ -129,11 +129,11 @@ resource "aws_s3_object" "dist" {
 
 data "archive_file" "lambda" {
   type             = "zip"
-  source_dir       = path.module
+  source_dir       = "${path.module}/.."
   output_file_mode = "0666"
   output_path      = "${path.module}/dist.zip"
 
-  excludes = ["dist.zip", ".terraform", "zzz_vars_override.tf", "zzz_backend_override.tf", "terraform", ".github", ".git", ".eslintrc", ".gitignore", ".terraformignore", "README.md", "LICENSE.md"]
+  excludes = ["terraform", ".github", ".git", ".eslintrc", ".gitignore", ".terraformignore", "README.md", "LICENSE.md"]
 }
 
 resource "aws_s3_bucket" "lambda-bucket" {
